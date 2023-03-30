@@ -9,8 +9,12 @@ while True:
     odp = input("Podaj dzialanie")
     if odp == "5":
         break
-    a = int(input("Podaj pierwsza liczbe"))
-    b = int(input("Podaj druga liczbe"))
+    try:
+        a = int(input("Podaj pierwsza liczbe"))
+        b = int(input("Podaj druga liczbe"))
+    except TypeError:
+        print("Błąd typu")
+        continue
     if odp == "1":
         print(f"Wynik działania {a} + {b} = {a + b}")
         # wynik działania 5 + 4 = 9
@@ -19,9 +23,9 @@ while True:
     elif odp == "3":
         print(f"Wynik działania {a} * {b} = {a * b}")
     elif odp == "4":
-        if b != 0:
+        try:
             print(f"Wynik działania {a} / {b} = {a / b}")
-        else:
-            print("nie dzielimy przez zero")
+        except ZeroDivisionError:
+            print("Dzielenie przez zero")
     else:
         print("Nie znam takiego działania")

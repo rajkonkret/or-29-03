@@ -14,6 +14,8 @@ my_dict = [
 file = 'records.csv'
 
 with open(file, 'w', newline="") as csv_f:
-    csvwriter = csv.DictWriter(csv_f, fieldnames=fields)
+    csvwriter = csv.DictWriter(csv_f, fieldnames=fields, delimiter=",")
     csvwriter.writeheader()
     csvwriter.writerows(my_dict)
+
+# 13:30
